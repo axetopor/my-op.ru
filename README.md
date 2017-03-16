@@ -1,0 +1,2 @@
+# my-op.ru
+stable
