@@ -1,0 +1,221 @@
+
+#container {
+margin: 0 auto;
+}
+
+/* Type Ahead */
+.typeahead { 
+display: block; width: 50px; 
+}
+
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:hover, 
+.dropdown-menu>.active>a:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #d95252;
+  background-image: -moz-linear-gradient(top, #db5a5a, #d64545);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#db5a5a), to(#d64545));
+  background-image: -webkit-linear-gradient(top, #db5a5a, #d64545);
+  background-image: -o-linear-gradient(top, #db5a5a, #d64545);
+  background-image: linear-gradient(to bottom, #db5a5a, #d64545);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdb5a5a', endColorstr='#ffd64545', GradientType=0);
+}
+
+/*NavBar Size */
+.navbar .nav { height: @navbarHeight; }
+.navbar .nav > li > a { 
+color: black;
+padding: 5px 10px 0px 10px; 
+}
+.navbar .brand { 
+font-weight: 700;
+font-family: inherit;
+color: black;
+padding: 5px 30px 5px; }
+#search_query{margin-top: 5px;}
+#title_text{padding-top: 5px;}
+	 
+/* Sticky Footer */
+	  #footer {
+  	 position:fixed;
+  	 left:0px;
+  	 bottom:0px;
+ 	 height:20px;
+ 	 text-indent: 20px;
+ 	 width:100%;
+  	 background:#FFFFFF;
+  	 text-align: right;
+}
+
+
+/*NavBar Color and Height */
+.navbar-inner {
+  background-color: #FFF; /* background color will be black for all browsers */
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+  height: 10px;
+  padding-right: 20px;
+}
+
+/*Link Color*/
+a { color:#475F78; }
+h1,h2,h3,h4,h5,h6{margin:0;font-family:inherit;font-weight:bold;color:inherit;text-rendering:optimizelegibility;}h1 small,h2 small,h3 small,h4 small,h5 small,h6 small{font-weight:normal;color:#999999;}
+
+
+/*Spacing Adjustments */
+h5 {
+display: block;
+font-size: 0.83em;
+-webkit-margin-before: 1.67em;
+-webkit-margin-after: 1.67em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+padding: 0px;
+margin-top: 0px;
+margin-bottom: 0px;
+line-height: 17px;
+}
+h4 {
+display: block;
+font-size: 0.86em;
+-webkit-margin-before: 1.67em;
+-webkit-margin-after: 1.67em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+font-weight: bold;
+padding: 0px;
+margin-top: 0px;
+margin-bottom: 0px;
+line-height: 14px;
+}
+.thumbnail .caption {
+padding: 4px 6px 0px 6px;
+line-height: 16px;
+}
+.media-heading{
+margin-bottom: 0px;
+}
+.p{
+margin-bottom: 0px;
+}
+
+/*Tag Styles */
+.tags {
+	  font-size: 0.82em; 
+      a:visited {color:#6B7DAD;}
+      }
+      p a:visited {color:#6B7DAD;}
+.media-body{color:#82837E;}  
+	  
+/* HR Break MOd */
+hr {
+margin: 5px 0;
+margin-top: 5px;
+margin-right: 0px;
+margin-bottom: 5px;
+margin-left: 0px;
+}
+
+h2{
+color: gray;
+}
+
+/* Menu for navigation */
+.dropdown-menu ul {
+    float: left;
+}
+#cat-caret{
+margin-top: 8px;
+}
+
+#categories {
+    min-width: 600px;
+    box-shadow: 10px;
+    border-width: 1px;
+    border-height: 1px;
+    border-style: dotted;
+	border-color: black;
+	float:center;
+	
+}
+
+#categories a{
+display: inline;
+padding: 0px 0px 0px 0px;
+clear: none;
+font-weight: normal;
+line-height: 10px;
+color: #222;
+white-space:normal;
+}
+
+
+.dropdown-menu ul {
+    border-right: 1px dashed grey;
+    padding-right:20px;
+    padding-left: 20px
+}
+
+ul:last-child { 
+    border:none; 
+  } 
+ /* End menu for navigation */
+
+/* Navigation hover dropdown */
+ul.nav li.dropdown:hover ul.dropdown-menu{
+    display: block;
+    margin: 0;    
+}
+
+a.menu:after, .dropdown-toggle:after {
+  content: none;
+  margin: 0;
+}
+ /* End Navigation hover dropdown  */
+ 
+/* Infinite Scroll loader */
+#infscr-loading { 
+  text-align: center;
+  z-index: 100;
+  position: fixed;
+  left: 45%;
+  bottom: 40px;
+  width: 200px;
+  padding: 10px;
+  background: #000; 
+  opacity: 0.8;
+  color: #FFF;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
+.gifContainer{
+	background:url('http://master-static.memepix.com/images/loading_savebutton.gif') 50% 50% no-repeat;
+}
+
+.gifContainerSpanFirst{
+	display:inline-block;
+}
+
+.gifContainerSpanSecond
+{
+	background:url('http://master-static.memepix.com/images/playgif.png') 50% 50% no-repeat;
+	opacity:1.0;
+	cursor:pointer;
+	display:inline-block;
+}
+
+.gifContainerSpanSecond:hover
+{
+	opacity: 0.8
+}

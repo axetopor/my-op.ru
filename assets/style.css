@@ -1,0 +1,74 @@
+@charset "utf-8";
+	/* CSS Document */
+
+*{
+	margin:0;
+	padding:0;
+}
+#login-form {
+	margin:5% auto;
+	max-width:500px;
+}
+	/* home page */
+#wrapper{
+	padding-top:50px;
+}
+
+.navbar-header{
+	background: url(https://vk.com/images/icons/head_icons.png?6) no-repeat #507299;
+
+	height: 19px;
+	width: 50px;
+	margin: 15px 15px 0 0;
+}
+
+.navbar-default{
+	
+    background-color: rgba(255, 255, 255, 0.45);
+	background: #507299;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: rgb(255, 255, 255);
+}
+
+	/* POLAROID */
+.polaroid {
+    position: relative;
+    width: 250px;
+
+    padding-bottom: 3px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+ 
+.polaroid img {
+ overflow: hidden;
+ width: 250px;
+ height: 200px;
+ border: 10px solid #fff;
+ border-bottom: 45px solid #fff;
+ -webkit-box-shadow: 3px 3px 3px #777;
+ -moz-box-shadow: 3px 3px 3px #777;
+ box-shadow: 3px 3px 3px #777;
+}
+ 
+.polaroid p {
+ position: absolute;
+ text-align: center;
+ width: 100%;
+ bottom: 0px;
+ font: 400 18px/1 'Kaushan Script', cursive;
+ color: #888;
+}
+/* POLAROD */
+
+
+/* МЕНЮ ИЗОБРАЖЕНИЯ */
+
+.ph_options {
+    position: absolute;
+    top: 93%;
+    right: 5%;
+}
+/* МЕНЮ ИЗОБРАЖЕНИЯ */
