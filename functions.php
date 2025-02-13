@@ -94,6 +94,27 @@ function AlbumsGet($owner_id, $token, $iferr) {
  *
  * @param string $group_ids ID группы (или несколько ID через запятую).
  */
+/**
+ * #########################################################################################
+ * ##                                                                                     ##
+ * ## Пример ответа API VK (JSON):                                                        ##
+ * ## {                                                                                   ##
+ * ##     "response": [{                                                                  ##
+ * ##         "gid": 00000000,                                                            ##
+ * ##         "name": "Имя заветной группы",                                              ##
+ * ##         "screen_name": "SHORT_NAME",                                                ##
+ * ##         "is_closed": 0,                                                             ##
+ * ##         "type": "group",                                                            ##
+ * ##         "is_admin": 0,                                                              ##
+ * ##         "is_member": 0,                                                             ##
+ * ##         "description": "Описание группы!",                                          ##
+ * ##         "photo": "https://pp.userap...ad7/u3apuk3nKek.jpg",                         ##
+ * ##         "photo_medium": "https://pp.userap...ad6/jIsScXTOT5g.jpg",                  ##
+ * ##         "photo_big": "https://pp.userap...ad5/7E-LEsUfG4k.jpg"                      ##
+ * ##     }]                                                                              ##
+ * ## }                                                                                   ##
+ * #########################################################################################
+ */
 function groups_getById($group_ids) {
     // Проверяем и экранируем входные данные
     $group_ids = htmlspecialchars($group_ids, ENT_QUOTES, 'UTF-8');
@@ -119,24 +140,4 @@ function groups_getById($group_ids) {
         print "Ошибка при получении информации о группе.";
     }
 }
-
-/*
-Пример ответа от VK API для функции groups_getById:
-{
-    "response": [{
-        "gid": 00000000,
-        "name": "Имя заветной группы",
-        "screen_name": "SHORT_NAME",
-        "is_closed": 0,
-        "type": "group",
-        "is_admin": 0,
-        "is_member": 0,
-        "description": "Описание группы!",
-        "photo": "https://pp.userap...ad7/u3apuk3nKek.jpg",
-        "photo_medium": "https://pp.userap...ad6/jIsScXTOT5g.jpg",
-        "photo_big": "https://pp.userap...ad5/7E-LEsUfG4k.jpg"
-    }]
-}
-*/
-
 ?>
