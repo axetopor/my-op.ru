@@ -26,37 +26,45 @@ if (isset($_POST['btn-login'])) {
 
     // Валидация email
     if (empty($email)) {
+        $error = true;
         $emailError = "Пожалуйста, введите свой адрес электронной почты.";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = true;
         $emailError = "Пожалуйста, введите правильный адрес электронной почты.";
     }
 
     // Валидация пароля
     if (empty($pass)) {
+        $error = true;
         $passError = "Пожалуйста, введите свой пароль.";
     }
 
     // Если ошибок нет, пытаемся авторизовать пользователя
-    if (empty($emailError) {
-        $password = hash('sha256', $pass); // Хэширование пароля
+    if (empty($error)) {
+        // Хэширование пароля
+        $password = hash('sha256', $pass);
 
-        // Используем подготовленные выражения для безопасности
+        // Использование подготовленных выражений для защиты от SQL-инъекций
         $stmt = $conn->prepare("SELECT userId, userName, userPass FROM users WHERE userEmail = ?");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $stmt->store_result();
-        $stmt->bind_result($userId, $userName, $userPass);
-        $stmt->fetch();
+        $stmt->bind_param("s", $email); // Привязываем email к запросу
+        $stmt->execute(); // Выполняем запрос
+        $stmt->store_result(); // Сохраняем результат
+        $stmt->bind_result($userId, $userName, $userPass); // Привязываем результат к переменным
+        $stmt->fetch(); // Получаем данные
 
+        // Проверяем, есть ли пользователь с таким email и паролем
         if ($stmt->num_rows == 1 && $userPass == $password) {
-            $_SESSION['user'] = $userId; // Устанавливаем сессию
-            header("Location: page.php"); // Перенаправляем на защищенную страницу
-            exit;
+            // Устанавливаем сессию для авторизованного пользователя
+            $_SESSION['user'] = $userId;
+            // Перенаправляем на защищенную страницу
+            header("Location: page.php");
+            exit; // Завершаем выполнение скрипта
         } else {
+            // Если данные неверны, выводим сообщение об ошибке
             $errMSG = "Неверные учетные данные. Попробуйте снова...";
         }
 
-        $stmt->close();
+        $stmt->close(); // Закрываем запрос
     }
 }
 ?>
